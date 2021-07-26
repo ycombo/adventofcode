@@ -7,3 +7,12 @@ def get_list_data_from_file(file_name, parser=str, sep='\n') -> list:
 def quantify(iterable, pred=bool) -> int:
     "Count the number of items in iterable for which pred is true."
     return sum(1 for item in iterable if pred(item))
+
+def convert_str_to_int(number):
+    ret = 0
+    try:
+        ret = int(number)
+    except:
+        pass
+    return ret
+
