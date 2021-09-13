@@ -1,5 +1,5 @@
 import utils
-import math
+#import math
 
 # def seat_id(seat_str):
 #     row_num = get_num(seat_str[0:7], 'F', 'B', 0, 127)
@@ -25,11 +25,3 @@ seat_ids = utils.get_list_data_from_file('day5.txt', seat_id)
 print(max(seat_ids))
 
 print(set(range(min(seat_ids), max(seat_ids))) - set(seat_ids))
-
-
-
-
-
-
-
-    
