@@ -14,7 +14,7 @@ def parse_inner(text):
 
 bag_rules = dict(utils.get_list_data_from_file('day7.txt', parse_bag_rule, sep='\n'))
 
-@lru_cache
+@lru_cache(None)
 def contains(bag, target) -> bool:
     contents = bag_rules.get(bag, {})
     return (target in contents or any(contains(inner, target) for inner in contents))

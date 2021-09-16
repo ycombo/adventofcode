@@ -1,3 +1,5 @@
+import re
+from typing import Tuple, Union
 
 def get_list_data_from_file(file_name, parser=str, sep='\n') -> list:
     file_path = 'data/' + file_name
@@ -16,3 +18,20 @@ def convert_str_to_int(number):
         pass
     return ret
 
+def first(iterable, default=None) -> object:
+    "Return first item in iterable, or default."
+    return next(iter(iterable), default)
+
+def atoms(text: str, ignore=r'', sep=None) -> Tuple[Union[int, str]]:
+    "Parse text into atoms (numbers or strs), possibly ignoring a regex."
+    if ignore:
+        text = re.sub(ignore, '', text)
+    return tuple(map(atom, text.split(sep)))
+
+def atom(text: str) -> Union[float, int, str]:
+    "Parse text into a single float or int or str."
+    try:
+        val = float(text)
+        return round(val) if round(val) == val else val
+    except ValueError:
+        return text
