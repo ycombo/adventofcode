@@ -15,7 +15,7 @@ def three_sum(data_list, target_num):
             return v * product
     return 0
 
-        
+    
 data = utils.get_list_data_from_file('day1.txt', int)
 print(two_sum(data, 2020))
 print(three_sum(data, 2020))

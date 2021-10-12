@@ -1,5 +1,6 @@
 import re
 from typing import Tuple, Union
+from itertools import combinations
 
 def get_list_data_from_file(file_name, parser=str, sep='\n') -> list:
     file_path = 'data/' + file_name
@@ -35,3 +36,5 @@ def atom(text: str) -> Union[float, int, str]:
         return round(val) if round(val) == val else val
     except ValueError:
         return text
+
+def two_sums(nums): return map(sum, combinations(nums, 2))
