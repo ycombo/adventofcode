@@ -37,4 +37,8 @@ def atom(text: str) -> Union[float, int, str]:
     except ValueError:
         return text
 
+def ints(text: str) -> Tuple[int]:
+    "Return a tuple of all the integers in text."
+    return tuple(map(int, re.findall('-?[0-9]+', text)))
+
 def two_sums(nums): return map(sum, combinations(nums, 2))

@@ -9,15 +9,14 @@ oppsite_direction = {
     'W': 'E'
 }
 
-instructions = utils.get_list_data_from_file('day12.txt', split_pair)
-
-
 def split_pair(instruction):
     action, values = instruction[0], int(instruction[1:])
     if action == 'L':
         action = 'R'
         values = 360 - values
     return (action, values)
+
+instructions = utils.get_list_data_from_file('day12.txt', split_pair)
 
 
 def right_rotated_direction(direction, degree):
