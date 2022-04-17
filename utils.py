@@ -37,6 +37,14 @@ def atom(text: str) -> Union[float, int, str]:
     except ValueError:
         return text
 
+def mapt(fn, *args):
+    "Do map(fn, *args) and make the result a tuple."
+    return tuple(map(fn, *args))
+
+def dot(A, B):
+    "The dot product of two vectors of numbers."
+    return sum(a * b for a, b in zip(A, B))
+
 def ints(text: str) -> Tuple[int]:
     "Return a tuple of all the integers in text."
     return tuple(map(int, re.findall('-?[0-9]+', text)))
